@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myheremapssdk">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity" android:exported="true"
+            android:label="@string/title_activity_maps"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.here.android.mpa.service.MapService"
+            android:label="My Here Maps SDK"
+            android:exported="false">
+           <intent-filter>
+                <action android:name="android.intent.action.MAIN">
+                </action>
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="unuhnxGdZ9luYlbJKYBE" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="cbyDLQdWZ1KHKm4SYuIIkA" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="DXte5cKyzbLmlwCqc9JoQkaqaTEmXXzBKeyG/zgJYIDmK4g4F6nJm41EsjTf68Nloly+/o65i1fGUNADMBcPb5nRuL5NDWzBu/+RqostpochxRbU7oOYmyonw9o9tu6631ajrCOpnnI9Z/x2Ni373UUPpc5IseAuK51TwjsQGeKfUhDqWYujnu0eyJ/U2lHwa2D9UPAfXD/Y4R/a3Bl0J86c3313uqlFDNZLJpk3S0DKlUMjCTwSGKAUpDAl3quZKd/egB08OrJrnP8DQAn1nwO1ZdHuy8sGfdmOMb8Lt0W5WF3g1Ooiviw17uOoLbiVof9j1zpPYO62bnRmBNmcfEeDy98j+vLC/yx7iKlazhgI3S63AVaOnv9NIgswkL/Qx0+RXRIhkv5go7+XGYJU2i/2asucCYbgSf0MNTZQGHkY5imO0eWsfI1QSyNMoBWgeP5hJOQiACDEReEZM05om37pGjdAW1yLcw1rjujodhSsVF0avbjctiWB9cMzjP5EyC9GtJMAbw5lPjLIBKbEBsA87He3DV+EZs24MIP94YnGkwjy+s53YFckPakaR6c5Qq6z1JTWzg25LtkYIcrM7k9nquSnNErtiFMl4VUnlask+bTHnZ/+3nytYMAemlqEW7vP1OVJZ4ylGB+S4xMwA0+V5kqRgD3xKHK9hTNpCG0=" />
+    </application>
+
+</manifest>
